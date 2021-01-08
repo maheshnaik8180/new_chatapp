@@ -6,9 +6,9 @@ files:
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
-      timeout: 300
+      timeout: 500
       runas: root
   AfterInstall:
     - location: scripts/django.sh
-      timeout: 600
+      timeout: 800
       runas: root
