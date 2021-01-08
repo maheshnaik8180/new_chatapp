@@ -1,2 +1,2 @@
 sudo systemctl stop django
-sudo rm -f requirement.txt
+sudo rm -f requirements.txt
