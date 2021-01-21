@@ -2,8 +2,10 @@ pipeline {
     agent any
     stages {
 	    stage('SCM Checkout'){
-		 git 'https://github.com/ravibs1994/new_chatapp'
+		    steps{
+		    git 'https://github.com/ravibs1994/new_chatapp'
 		 }
+	    }
             stage('build') {
                steps {
                      sh 'rsync -avh -e ssh -i /var/lib/jenkins/keypairForChatApp.pem /var/lib/jenkins/workspace/JenkinsChatapp/ ubuntu@10.0.1.66:/home/ubuntu/new_chatapp/'
