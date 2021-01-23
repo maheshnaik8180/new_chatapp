@@ -6,13 +6,16 @@ pipeline {
 		    git 'https://github.com/ravibs1994/new_chatapp'
 		 }
 	    }
-    stage('SonarQube analysis') {
-   steps{
-        def scannerHome = tool 'SonarScanner 4.0'
-        withSonarQubeEnv('sonar-server') { // If you have configured more than one global server connection, you can specify its name
-        sh "/var/lib/jenkins/bin/sonar-scanner"
+ stage('Sonarqube') {
+    environment {
+        scannerHome = tool 'SonarScanner
+'
     }
-  }
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            sh "${scannerHome}/bin/sonar-scanner"
+        }
+    }
 }
 
             stage('build') {
