@@ -15,9 +15,9 @@ pipeline {
             sh "${scannerHome}/bin/sonar-scanner"
         }
 	    timeout(time: 5, unit: 'MINUTES') {
-            waitForQualityGate(webhookSecretId: 'ravi') 
             waitForQualityGate abortPipeline: true
-	             
+	    waitForQualityGate(webhookSecretId: 'ravi') 
+	    
         }
     }
 }
