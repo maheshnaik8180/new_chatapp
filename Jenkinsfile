@@ -16,6 +16,7 @@ pipeline {
         }
 	    timeout(time: 5, unit: 'MINUTES') {
             waitForQualityGate(webhookSecretId: 'ravi') 
+            waitForQualityGate abortPipeline: true
 	             
         }
     }
