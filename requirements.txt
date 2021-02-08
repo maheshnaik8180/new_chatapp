@@ -22,12 +22,9 @@ hiredis==1.0.0
 hyperlink==18.0.0
 idna==2.8
 incremental==17.5.0
-jwt==0.5.4
-msgpack==0.6.1
+jwt==1.1.0
 oauthlib==3.0.1
 plumber==1.5
-psycopg2==2.7.7
-psycopg2-binary==2.7.7
 pycparser==2.19
 PyHamcrest==1.9.0
 PyJWT==1.7.1
