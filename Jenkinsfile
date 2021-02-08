@@ -8,9 +8,9 @@ pipeline {
 	   }
          stage('Build Docker Image') {
              steps {
-                  sh 'sudo docker build -t jenkinsbackend /var/lib/jenkins/workspace/DockerJenkinsPipeline'
-                  sh 'sudo  docker tag jenkinsbackend:latest 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend'
-                  sh 'sudo docker push 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend:latest'
+                  sh 'docker build -t jenkinsbackend /var/lib/jenkins/workspace/DockerJenkinsPipeline'
+                  sh 'docker tag jenkinsbackend:latest 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend'
+                  sh 'docker push 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend:latest'
          }
        }
     }
