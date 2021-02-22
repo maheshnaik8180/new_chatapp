@@ -13,12 +13,7 @@ pipeline {
                 sh 'sudo docker push 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend:latest'
             }
         }
-        stage('Pull Docker Image') {
-            steps{
-	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.129 sudo docker pull 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend:latest'
-            }
-        }
-        stage('Run Docker Image') {
+        stage('Deploy app on Kubernetes Cluster') {
             steps{
 	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.18 sudo kubectl delete pods backend-74554b5fd9-sd9bp' 
             }
