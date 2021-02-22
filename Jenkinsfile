@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Run Docker Image') {
             steps{
-	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.18 sudo kubectl delete pods backend-74554b5fd9-sd9bp 
+	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.18 sudo kubectl delete pods backend-74554b5fd9-sd9bp' 
             }
         }
     }
