@@ -20,9 +20,7 @@ pipeline {
         }
         stage('Run Docker Image') {
             steps{
-                sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.129 sudo docker stop backend'
-                sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.129 sudo docker rm backend'
-	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.129 sudo docker run -d -p 8000:8000 --link mydb --name backend 646702086747.dkr.ecr.ap-south-1.amazonaws.com/jenkinsbackend'
+	            sh 'ssh -i /var/lib/jenkins/keypairForChatApp.pem -o StrictHostKeyChecking=no ubuntu@10.0.2.18 sudo kubectl delete pods backend-5759d745b6-57jkj
             }
         }
     }
